@@ -1,0 +1,98 @@
+body {
+    background-color: rgb(240, 248, 255);
+}
+
+#formbox {
+    width: 32rem;
+    background-color: white;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem 1rem 1rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+#form-title {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+#form-title p {
+    color: rgb(44, 44, 44);
+}
+
+form {
+    padding-top: 1rem;
+}
+
+.form_input {
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid rgb(164, 164, 164);
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+}
+
+.form_input label {
+    color: black;
+    padding-bottom: 0.7rem;
+    font-weight: bold;
+}
+
+.form_input input {
+    width: 24rem;
+    height: 1.5rem;
+    border: none;
+    border-bottom: 1px solid rgb(49, 49, 49);
+}
+
+.form_input input:focus-visible {
+    border-bottom: 1px solid rgb(115, 115, 115);
+    outline: none;
+}
+
+.form_input p {
+    margin: 0;
+    font-size: 0.7rem;
+    padding: 2px;
+    color: rgb(95, 95, 95);
+}
+
+fieldset {
+    margin: 0.75rem 0;
+}
+
+fieldset legend {
+    font-weight: bold;
+}
+
+fieldset p {
+    margin: 0;
+    font-size: 0.7rem;
+    padding: 2px;
+    color: rgb(95, 95, 95);
+}
+
+#btn-area {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    margin: 0;
+    padding: 3px;
+    width: 40%;
+    font-size: medium;
+    color: white;
+    background-color: rgb(165, 173, 184);
+    border: 1px solid rgb(165, 173, 184);
+    border-radius: 5px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(135, 142, 151);
+}
