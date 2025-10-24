@@ -1,10 +1,16 @@
 package com.ssg.webmvc.todo.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class TodoDTO {
     private Long tno; //todo 고유값 pk
     private String title;

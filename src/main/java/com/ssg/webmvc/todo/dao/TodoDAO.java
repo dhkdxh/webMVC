@@ -45,7 +45,8 @@ public class TodoDAO {
         pstmt.setString(1, vo.getTitle());
         pstmt.setDate(2, Date.valueOf(vo.getDueDate()));
         pstmt.setBoolean(3, vo.isFinished());
-        pstmt.executeUpdate();
+        int result = pstmt.executeUpdate();
+        if(result==0) throw new Exception("[DB] 등록 중 예외 발생");
     }
 
     public List<TodoVO> selectAll() throws Exception {
@@ -77,7 +78,9 @@ public class TodoDAO {
         pstmt.setLong(1, tno);
         @Cleanup ResultSet rs = pstmt.executeQuery();
 
-        rs.next();
+        boolean result = rs.next();
+
+        if(!result) return null;
 
         TodoVO vo = TodoVO.builder().
                 tno(rs.getLong("tno")).
@@ -94,7 +97,8 @@ public class TodoDAO {
         @Cleanup Connection connection = ConnectionUtil.INSTANCE.getConnection();
         @Cleanup PreparedStatement pstmt = connection.prepareStatement(sql);
         pstmt.setLong(1, tno);
-        pstmt.executeUpdate();
+        int result =  pstmt.executeUpdate();
+        if(result == 0) throw new Exception("[DB] 삭제 중 문제 발생");
     }
 
     public void updateOne(TodoVO todoVO) throws Exception{
@@ -106,6 +110,7 @@ public class TodoDAO {
         pstmt.setDate(2, Date.valueOf(todoVO.getDueDate()));
         pstmt.setBoolean(3, todoVO.isFinished());
         pstmt.setLong(4, todoVO.getTno());
-        pstmt.executeUpdate();
+        int result = pstmt.executeUpdate();
+        if(result==0) throw new Exception("[DB] 해당 tno값이 존재하지 않음");
     }
 }

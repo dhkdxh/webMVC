@@ -14,21 +14,9 @@
 <body>
     <h1>List Page</h1>
 
-<%--    <p>${list}</p>--%>
-<%--    <h3>${1+2+3}</h3>--%>
-<%--    <h3>${"aaa" += "BBB"}</h3>--%>
-<%--    <h3>${"AAA".equals("bbb")}</h3>--%>
-<%--    <h4>${list[0].tno}</h4>--%>
-<%--    <h4>${list[0].getDueDate()}</h4>--%>
-
     <ul>
-        <c:forEach var="dto" items="${list}">
-            <li>${dto}</li>
-        </c:forEach>
-    </ul>
-    <ul>
-        <c:forEach var="form" begin="1" end="10">
-            <li>${form}</li>
+        <c:forEach var="dto" items="${dtoList}">
+            <li>${dto.tno} ${dto.title} ${dto.dueDate} ${dto.finished}</li>
         </c:forEach>
     </ul>
 </body>
